@@ -30,7 +30,7 @@ export async function getServerSideProps({params, req, res}) {
   
   if (data) {
     return {
-      props: {note: data}
+      props: {recipe: data}
     }
   }
 }
