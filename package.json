@@ -13,6 +13,7 @@
     "next-env": "^1.1.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "styled-components": "^5.3.6",
     "theme-ui": "^0.3.1"
   },
   "scripts": {
