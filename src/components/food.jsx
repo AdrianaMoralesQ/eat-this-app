@@ -2,8 +2,8 @@
 // type: protein, veggies, STEPs
 // unit: for ex. grams, cups, teaspoons,
 // portion: num
-
-import { IngredientWrapper } from "../../Styled Components";
+import SmartTable from "react-next-table";
+import { TypeWrapper, Wrapper } from "../../Styled Components";
 
 export default function Food({ name, id, unit, portion }) {
 	return (
@@ -14,8 +14,6 @@ export default function Food({ name, id, unit, portion }) {
 		</div>
 	);
 }
-// const Protein = filter by type
-//  ProteinArray = Protein.map
 
 export function Ingredients() {
 	const Proteins = Ingredient.filter((ing) => ing.type === "protein");
@@ -24,58 +22,75 @@ export function Ingredients() {
 	const Dairy = Ingredient.filter((ing) => ing.type === "dairy");
 
 	return (
-		<>
-			<IngredientWrapper>
+		<Wrapper>
+			<TypeWrapper>
 				<h3>Proteins</h3>
 				<p>Eat 3-5 a day</p>
-				<div>
-					{Proteins.map((food) => (
-						<Food name={food.name} portion={food.portion} unit={food.unit} />
-					))}
-				</div>
-			</IngredientWrapper>
-			<h3>Fruits</h3>
-			<p>Eat 2 a day</p>
-			{Fruits.map((food) => (
-				<Food name={food.name} portion={food.portion} unit={food.unit} />
-			))}
-			<h3>Veggies</h3>
-			<p>Eat 5-7 a day</p>
-			{Veggies.map((food) => (
-				<Food name={food.name} portion={food.portion} unit={food.unit} />
-			))}
-			<h3>Dairy and alternatives</h3>
-			<p>Eat 5-7 a day</p>
-			{Dairy.map((food) => (
-				<Food name={food.name} portion={food.portion} unit={food.unit} />
-			))}
-		</>
+				<SmartTable data={Proteins} headCells={headCells} />
+			</TypeWrapper>
+			<TypeWrapper>
+				<h3>Fruits</h3>
+				<p>Eat 2 a day</p>
+				<SmartTable data={Fruits} headCells={headCells} />
+			</TypeWrapper>
+			<TypeWrapper>
+				<h3>Veggies</h3>
+				<p>Eat 5-7 a day</p>
+				<SmartTable data={Veggies} headCells={headCells} />
+			</TypeWrapper>
+			<TypeWrapper>
+				<h3>Dairy and alternatives</h3>
+				<p>Eat 5-7 a day</p>
+				<SmartTable data={Dairy} headCells={headCells} />
+			</TypeWrapper>
+		</Wrapper>
 	);
 }
+
+const headCells = [
+	{
+		id: "name",
+		numeric: false,
+		label: "Ingredient",
+		width: 200,
+	},
+	{
+		id: "portion",
+		numeric: false,
+		label: "Portion",
+		width: 150,
+	},
+	{
+		id: "unit",
+		numeric: false,
+		label: "Unit",
+		width: 100,
+	},
+];
 
 const Ingredient = [
 	{
 		type: "protein",
-		name: "chicken",
+		name: "Chicken",
 		portion: "90",
 		unit: "grams",
 	},
-	{ type: "protein", name: "salmon", portion: "90", unit: "grams" },
-	{ type: "protein", name: "cod", portion: "90", unit: "grams" },
-	{ type: "protein", name: "tuna", portion: "90", unit: "grams" },
-	{ type: "protein", name: "mozzarella", portion: "60", unit: "grams" },
-	{ type: "fruit", name: "grapes", portion: "1", unit: "cup" },
-	{ type: "fruit", name: "pears", portion: "1", unit: "cup" },
-	{ type: "fruit", name: "apples", portion: "5", unit: "cup" },
-	{ type: "fruit", name: "grapefruit", portion: "1", unit: "cup" },
-	{ type: "veggies", name: "cucumber", portion: "1", unit: "cup" },
-	{ type: "veggies", name: "tomato", portion: "1", unit: "cup" },
-	{ type: "veggies", name: "spinach", portion: "1", unit: "cup" },
-	{ type: "veggies", name: "kale", portion: "1", unit: "cup" },
-	{ type: "dairy", name: "greek yogurt", portion: ".5", unit: "cup" },
-	{ type: "dairy", name: "feta", portion: "60", unit: "grams" },
-	{ type: "dairy", name: "nut milk", portion: "1", unit: "cup" },
-	{ type: "dairy", name: "cow milk", portion: "1", unit: "cup" },
+	{ type: "protein", name: "Salmon", portion: "90", unit: "grams" },
+	{ type: "protein", name: "Cod", portion: "90", unit: "grams" },
+	{ type: "protein", name: "Tuna", portion: "90", unit: "grams" },
+	{ type: "protein", name: "Mozzarella", portion: "60", unit: "grams" },
+	{ type: "fruit", name: "Grapes", portion: "1", unit: "cup" },
+	{ type: "fruit", name: "Pears", portion: "1", unit: "cup" },
+	{ type: "fruit", name: "Apples", portion: "5", unit: "cup" },
+	{ type: "fruit", name: "Grapefruit", portion: "1", unit: "cup" },
+	{ type: "veggies", name: "Cucumber", portion: "1", unit: "cup" },
+	{ type: "veggies", name: "Tomato", portion: "1", unit: "cup" },
+	{ type: "veggies", name: "Spinach", portion: "1", unit: "cup" },
+	{ type: "veggies", name: "Kale", portion: "1", unit: "cup" },
+	{ type: "dairy", name: "Greek yogurt", portion: ".5", unit: "cup" },
+	{ type: "dairy", name: "Feta", portion: "60", unit: "grams" },
+	{ type: "dairy", name: "Nut milk", portion: "1", unit: "cup" },
+	{ type: "dairy", name: "Cow milk", portion: "1", unit: "cup" },
 ];
 
 console.table(Ingredient);

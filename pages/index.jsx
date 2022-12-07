@@ -1,14 +1,13 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import Food, { Ingredients } from "../src/components/food";
-// import Food from '../src/components/food'
 
 export default ({ content }) => (
 	<div sx={{ height: `calc(100vh - 60px)` }}>
 		<div
 			sx={{
 				variant: "containers.page",
-				display: "flex",
+				// display: "flex",
 				alignItems: "center",
 				height: "100%",
 			}}
