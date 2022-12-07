@@ -24,22 +24,22 @@ export function Ingredients() {
 	return (
 		<Wrapper>
 			<TypeWrapper>
-				<h3>Proteins</h3>
+				<h3>Protein 🍣</h3>
 				<p>Eat 3-5 a day</p>
 				<SmartTable data={Proteins} headCells={headCells} />
 			</TypeWrapper>
 			<TypeWrapper>
-				<h3>Fruits</h3>
+				<h3>Fruit 🍓</h3>
 				<p>Eat 2 a day</p>
 				<SmartTable data={Fruits} headCells={headCells} />
 			</TypeWrapper>
 			<TypeWrapper>
-				<h3>Veggies</h3>
+				<h3>Veggies 🥗</h3>
 				<p>Eat 5-7 a day</p>
 				<SmartTable data={Veggies} headCells={headCells} />
 			</TypeWrapper>
 			<TypeWrapper>
-				<h3>Dairy and alternatives</h3>
+				<h3>Dairy and Alternatives 🥜</h3>
 				<p>Eat 5-7 a day</p>
 				<SmartTable data={Dairy} headCells={headCells} />
 			</TypeWrapper>

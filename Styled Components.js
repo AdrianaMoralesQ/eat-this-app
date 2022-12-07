@@ -6,9 +6,6 @@ export const Wrapper = styled.div`
 `;
 
 export const TypeWrapper = styled.div`
-	background-color: primary;
-`;
-
-export const IngredientWrapper = styled.div`
-	display: block;
+	background-color: hsl(260, 100%, 80%);
+	outline: solid hsl(260, 100%, 80%) 0.25rem;
 `;
