@@ -92,5 +92,3 @@ const Ingredient = [
 	{ type: "dairy", name: "Nut milk", portion: "1", unit: "cup" },
 	{ type: "dairy", name: "Cow milk", portion: "1", unit: "cup" },
 ];
-
-console.table(Ingredient);
