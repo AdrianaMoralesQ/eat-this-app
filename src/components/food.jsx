@@ -24,8 +24,6 @@ const base = new Airtable({ apiKey: "keyBbyFzeryQdSUuP" }).base(
 export function Ingredients() {
 	const [ingredientsFromAirtable, setIngredients] = useState([]);
 
-	// const Proteins = Ingredient.filter((ing) => ing.type === "protein");
-	// const Fruits = Ingredient.filter((ing) => ing.type === "fruit");
 	const Veggies = ingredientsFromAirtable.filter(
 		(ingredient) => ingredient.type === "Veggies"
 	);
