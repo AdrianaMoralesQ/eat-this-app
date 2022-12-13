@@ -17,14 +17,13 @@
 		"react": "^16.13.1",
 		"react-dom": "^16.13.1",
 		"react-next-table": "^1.1.4",
-		"react-scripts": "5.0.2",
 		"styled-components": "^5.3.6",
 		"theme-ui": "^0.3.1"
 	},
 	"scripts": {
 		"dev": "next",
 		"build": "next build",
-		"start": "react-scripts start --openssl-legacy-provider"
+		"start": "next start"
 	},
 	"devDependencies": {}
 }
