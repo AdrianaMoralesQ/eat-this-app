@@ -1,5 +1,7 @@
+/** @jsx jsx */
 import { useState } from "react";
-import { Show } from "../../Styled Components";
+import { Card, Show, Table, TableHead } from "../../Styled Components";
+import { jsx } from "theme-ui";
 
 export const Ingredient = ({ title, content, description }) => {
 	const [isOpen, setIsOpen] = useState(false);
@@ -9,18 +11,16 @@ export const Ingredient = ({ title, content, description }) => {
 	}
 
 	return (
-		<div>
+		<Card sx={{ variant: "containers.card" }}>
 			<h2>{title}</h2>
 			<p>{description}</p>
-			<Show className="show" onClick={toggleVisibility}>
-				Show ingredients
-			</Show>
+			<Show onClick={toggleVisibility}>Ingredients</Show>
 			{isOpen && (
-				<table className="Ingredients">
+				<Table className="Ingredients">
 					<tr>
-						<th>Ingredient</th>
-						<th>Portion</th>
-						<th>Unit</th>
+						<TableHead>Ingredient</TableHead>
+						<TableHead>Portion</TableHead>
+						<TableHead>Unit</TableHead>
 					</tr>
 					{content.map((ingredient) => (
 						<tr>
@@ -29,8 +29,8 @@ export const Ingredient = ({ title, content, description }) => {
 							<td> {ingredient.unit}</td>
 						</tr>
 					))}
-				</table>
+				</Table>
 			)}
-		</div>
+		</Card>
 	);
 };

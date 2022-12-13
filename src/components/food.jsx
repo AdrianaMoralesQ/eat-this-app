@@ -42,7 +42,7 @@ export function Ingredients() {
 			<Ingredient
 				title={"Veggies 🥬"}
 				content={Veggies}
-				description={"Eat 5-7 a day"}
+				description={"Eat 4-5 a day"}
 			/>
 			<Ingredient
 				title={"Protein 🥩"}
@@ -52,12 +52,12 @@ export function Ingredients() {
 			<Ingredient
 				title={"Fruits 🍒"}
 				content={Fruit}
-				description={"Eat 5-7 a day"}
+				description={"Eat 2 a day"}
 			/>
 			<Ingredient
 				title={"Dairy and Alternatives 🥛"}
 				content={Dairy}
-				description={"Eat 5-7 a day"}
+				description={"Eat 2 a day"}
 			/>
 			<Ingredient
 				title={"STEPs 🥖"}
@@ -67,7 +67,7 @@ export function Ingredients() {
 			<Ingredient
 				title={"Fats 🥜"}
 				content={Fats}
-				description={"Eat 5-7 a day"}
+				description={"Eat 3 a day"}
 			/>
 		</Wrapper>
 	);
