@@ -1,7 +1,7 @@
 import { Wrapper } from "../../Styled Components";
 import { useEffect, useState } from "react";
 import Airtable from "airtable";
-import { Recipe } from "./Recipe";
+import { SingleRecipe } from "./SingleRecipe";
 
 const base = new Airtable({ apiKey: "keyBbyFzeryQdSUuP" }).base(
 	"appgMqu4ah8WXhmEY"
@@ -11,7 +11,16 @@ export function Recipes() {
 	const [recipesFromAirtable, setRecipesFromAirtable] = useState([]);
 
 	const Lunch = recipesFromAirtable.filter((recipe) => recipe.type === "lunch");
-	console.log(Lunch, "from Recipes");
+	const Breakfast = recipesFromAirtable.filter(
+		(recipe) => recipe.type === "breakfast"
+	);
+	const Dinner = recipesFromAirtable.filter(
+		(recipe) => recipe.type === "dinner"
+	);
+	const Snack = recipesFromAirtable.filter((recipe) => recipe.type === "snack");
+	const Dressing = recipesFromAirtable.filter(
+		(recipe) => recipe.type === "dressing"
+	);
 
 	useEffect(() => {
 		base("tbl9y6zno3oWXv9p1")
@@ -23,36 +32,31 @@ export function Recipes() {
 	}, [base]);
 	return (
 		<Wrapper>
-			<Recipe
+			<SingleRecipe
+				title={"Breakfast"}
+				content={Breakfast}
+				description={"Start the morning off right with a glass of water"}
+			/>
+			<SingleRecipe
 				title={"Lunch"}
 				content={Lunch}
-				description={"Make sure to add up to two veggie portions"}
+				description={"Aim to add up to two veggie portions"}
 			/>
-			{/* <Ingredient
-				title={"Breakfast 🥩"}
-				content={}
-				description={"Make sure to include some water, not just coffee"}
-			/> */}
-			{/* <Ingredient
-				title={"Fruits 🍒"}
-				content={Fruit}
-				description={"Eat 2 a day"}
+			<SingleRecipe
+				title={"Dinner"}
+				content={Dinner}
+				description={"Fill half your plate with vegetables "}
 			/>
-			<Ingredient
-				title={"Dairy and Alternatives 🥛"}
-				content={Dairy}
-				description={"Eat 2 a day"}
+			<SingleRecipe
+				title={"Snacks"}
+				content={Snack}
+				description={"Look for fiber rich options"}
 			/>
-			<Ingredient
-				title={"STEPs 🥖"}
-				content={Carbs}
-				description={"Eat 5-7 a day"}
+			<SingleRecipe
+				title={"Dressings and Marinades"}
+				content={Dressing}
+				description={"Keep it interesting"}
 			/>
-			<Ingredient
-				title={"Fats 🥜"}
-				content={Fats}
-				description={"Eat 3 a day"}
-			/> */}
 		</Wrapper>
 	);
 }
