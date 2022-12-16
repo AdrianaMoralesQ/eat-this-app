@@ -1,8 +1,8 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-import { Ingredients } from "../src/components/ingredients";
+import { Recipe } from "../src/components/Recipe";
 
-const Main = ({ content }) => {
+export default ({ content }) => {
 	return (
 		<div sx={{ height: `calc(100vh - 60px)` }}>
 			<div
@@ -13,7 +13,7 @@ const Main = ({ content }) => {
 				}}
 			>
 				<h1 sx={{ fontSize: 8, my: 0 }}>{content.title}</h1>
-				<Ingredients />
+				<Recipe />
 			</div>
 		</div>
 	);
@@ -23,10 +23,18 @@ export async function getStaticProps() {
 	return {
 		props: {
 			content: {
-				title: "My Portions 🥑",
+				title: "My Recipes 🥑",
 			},
 		},
 	};
 }
+// const Test = () => {
+// 	return (
+// 		<div>
+// 			<h1>These are your recipes:</h1>
+// 			<Recipe />
+// 		</div>
+// 	);
+// };
 
-export default Main;
+// export default Test;

@@ -25,5 +25,7 @@
 		"build": "next build",
 		"start": "next start"
 	},
-	"devDependencies": {}
+	"devDependencies": {
+		"@types/theme-ui": "^0.6.0"
+	}
 }

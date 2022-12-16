@@ -36,7 +36,7 @@ export function Ingredients() {
 				setIngredients(records.map((record) => record.fields));
 				fetchNextPage();
 			});
-	}, []);
+	}, [base]);
 	return (
 		<Wrapper>
 			<Ingredient
@@ -72,3 +72,5 @@ export function Ingredients() {
 		</Wrapper>
 	);
 }
+
+export default Ingredients;

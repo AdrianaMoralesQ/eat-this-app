@@ -1,14 +1,14 @@
 import React from "react";
 
-const Ingredients = ({ ingredient }) => {
+const IngredientsNot = ({ ingredient }) => {
 	return (
 		<div>
 			<h2>{ingredient.fields.name}</h2>
 			<div>
 				<h3>Details</h3>
-				{/* <p>
+				<p>
 					{ingredient.field.portion} {ingredient.field.unit}
-				</p> */}
+				</p>
 			</div>
 		</div>
 	);
