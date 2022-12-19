@@ -11,7 +11,6 @@ const base = new Airtable({ apiKey: "keyBbyFzeryQdSUuP" }).base(
 export function Recipes() {
 	const [recipesFromAirtable, setRecipesFromAirtable] = useState([]);
 	const [userInput, setUserInput] = useState("");
-	const [isVisible, setIsVisible] = useState(false);
 
 	const Lunch = recipesFromAirtable.filter((recipe) => recipe.type === "lunch");
 	const Breakfast = recipesFromAirtable.filter(
@@ -36,13 +35,15 @@ export function Recipes() {
 
 	const handleChange = (e) => {
 		setUserInput(e.target.value);
-		setIsVisible(!isVisible);
 	};
 
 	// for search bar
 	const SearchIngredients = recipesFromAirtable.filter((recipe) =>
 		recipe.recipeName.toLowerCase().includes(userInput.toLowerCase())
 	);
+
+	const FilteredLength = SearchIngredients.length;
+	const UnfilteredLength = recipesFromAirtable.length;
 
 	return (
 		<Wrapper>
@@ -55,11 +56,18 @@ export function Recipes() {
 					title="Search bar"
 				/>
 			</form>
-			{isVisible && (
-				<SearchResultsRecipe
-					title={"Search Results:"}
-					content={SearchIngredients}
-				/>
+			{!!FilteredLength && FilteredLength !== UnfilteredLength && (
+				<>
+					<SearchResultsRecipe
+						title={"Search Results:"}
+						content={SearchIngredients}
+					/>
+				</>
+			)}
+			{FilteredLength === 0 && (
+				<div>
+					<h4>No results</h4>
+				</div>
 			)}
 
 			<SingleRecipe

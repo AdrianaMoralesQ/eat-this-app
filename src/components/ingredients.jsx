@@ -12,7 +12,6 @@ export function Ingredients() {
 	// to filter by type
 	const [ingredientsFromAirtable, setIngredients] = useState([]);
 	const [userInput, setUserInput] = useState("");
-	const [isVisible, setIsVisible] = useState(false);
 
 	const Veggies = ingredientsFromAirtable.filter(
 		(ingredient) => ingredient.type === "Veggies"
@@ -44,7 +43,6 @@ export function Ingredients() {
 
 	const handleChange = (e) => {
 		setUserInput(e.target.value);
-		// setIsVisible(!isVisible);
 	};
 
 	// for search bar
