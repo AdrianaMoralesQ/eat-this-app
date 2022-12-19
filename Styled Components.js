@@ -34,3 +34,8 @@ export const Card = styled.div`
 	margin: 0.5rem;
 	padding: 0.5rem;
 `;
+
+export const RecipeIngredients = styled.div`
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+`;

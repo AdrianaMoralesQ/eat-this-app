@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-import { Recipe } from "../src/components/Recipe";
+import { Recipe } from "../src/components/SingleRecipe";
+import { Recipes } from "../src/components/Recipes";
 
 export default ({ content }) => {
 	return (
@@ -13,7 +14,11 @@ export default ({ content }) => {
 				}}
 			>
 				<h1 sx={{ fontSize: 8, my: 0 }}>{content.title}</h1>
-				<Recipe />
+				<Recipes
+				// title={"this is a mock recipe"}
+				// content={[]}
+				// description="mon deskri"
+				/>
 			</div>
 		</div>
 	);
