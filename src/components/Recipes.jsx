@@ -33,27 +33,27 @@ export function Recipes() {
 	return (
 		<Wrapper>
 			<SingleRecipe
-				title={"Breakfast"}
+				title={"Breakfast 🍳"}
 				content={Breakfast}
 				description={"Start the morning off right with a glass of water"}
 			/>
 			<SingleRecipe
-				title={"Lunch"}
+				title={"Lunch  🥒"}
 				content={Lunch}
 				description={"Aim to add up to two veggie portions"}
 			/>
 			<SingleRecipe
-				title={"Dinner"}
+				title={"Dinner  🍜"}
 				content={Dinner}
-				description={"Fill half your plate with vegetables "}
+				description={"Fill half your plate with vegetables"}
 			/>
 			<SingleRecipe
-				title={"Snacks"}
+				title={"Snacks  🍿"}
 				content={Snack}
 				description={"Look for fiber rich options"}
 			/>
 			<SingleRecipe
-				title={"Dressings and Marinades"}
+				title={"Dressings and Marinades  🥗"}
 				content={Dressing}
 				description={"Keep it interesting"}
 			/>

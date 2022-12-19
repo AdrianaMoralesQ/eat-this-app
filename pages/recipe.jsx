@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-import { Recipe } from "../src/components/SingleRecipe";
 import { Recipes } from "../src/components/Recipes";
 
 export default ({ content }) => {
@@ -14,11 +13,7 @@ export default ({ content }) => {
 				}}
 			>
 				<h1 sx={{ fontSize: 8, my: 0 }}>{content.title}</h1>
-				<Recipes
-				// title={"this is a mock recipe"}
-				// content={[]}
-				// description="mon deskri"
-				/>
+				<Recipes />
 			</div>
 		</div>
 	);
@@ -33,13 +28,3 @@ export async function getStaticProps() {
 		},
 	};
 }
-// const Test = () => {
-// 	return (
-// 		<div>
-// 			<h1>These are your recipes:</h1>
-// 			<Recipe />
-// 		</div>
-// 	);
-// };
-
-// export default Test;

@@ -27,7 +27,7 @@ const Nav = () => (
 				</a>
 			</Link>
 
-			<Link href="/test">
+			<Link href="/recipe">
 				<a sx={{ color: "text", fontSize: 3, cursor: "pointer" }}>Recipes</a>
 			</Link>
 

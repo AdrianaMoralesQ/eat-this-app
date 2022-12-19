@@ -5,14 +5,12 @@ import { Card, TableHead } from "../../Styled Components";
 import { useState } from "react";
 
 export const SingleRecipe = ({ title, content, description }) => {
-	// if (!content) return null;
+	if (!content) return null;
 	const [isOpen, setIsOpen] = useState(false);
 
 	function toggleVisibility() {
 		setIsOpen(!isOpen);
 	}
-
-	console.log(content);
 
 	return (
 		<div sx={{ variant: "containers.card" }}>
@@ -28,14 +26,10 @@ export const SingleRecipe = ({ title, content, description }) => {
 								<table>
 									<tr>
 										<TableHead>Ingredients</TableHead>
-										{/* <TableHead>Portion</TableHead>
-										<TableHead>Unit</TableHead> */}
 										<TableHead>Instructions</TableHead>
 									</tr>
 									<tr>
-										<td>{recipe.ingredientName + ","}</td>
-										{/* <td>{recipe.ingredientPortion + ",  "}</td>
-										<td>{recipe.ingredientUnit + ",  "}</td> */}
+										<td>{recipe.ingredientsFromRecipeLong}</td>
 										<td>{recipe.instructions}</td>
 									</tr>
 								</table>
@@ -47,12 +41,3 @@ export const SingleRecipe = ({ title, content, description }) => {
 		</div>
 	);
 };
-
-// export async function getServerSideProps() {
-// 	const res = await fetch(`http://localhost:3000/api/recipe`);
-// 	const { data } = await res.json();
-
-// 	return {
-// 		props: { recipes: data },
-// 	};
-// }
