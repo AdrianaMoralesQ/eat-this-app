@@ -20,21 +20,29 @@ export const SingleRecipe = ({ title, content, description }) => {
 			{isOpen && (
 				<div>
 					{content.map((recipe) => (
-						<>
+						<Card sx={{ variant: "containers.card" }}>
 							<h3>{recipe.recipeName}</h3>
 							<RecipeIngredients>
-								<table>
+								{/* <table>
 									<tr>
 										<TableHead>Ingredients</TableHead>
 										<TableHead>Instructions</TableHead>
 									</tr>
 									<tr>
 										<td>{recipe.ingredientsFromRecipeLong}</td>
-										<td>{recipe.instructions}</td>
+										<td >{recipe.instructions}</td>
 									</tr>
-								</table>
+								</table> */}
+								<div>
+									<h4>Ingredients:</h4>
+									<p>{recipe.ingredientsFromRecipeLong}</p>
+								</div>
+								<div>
+									<h4>Instructions:</h4>
+									<p>{recipe.instructions}</p>
+								</div>
 							</RecipeIngredients>
-						</>
+						</Card>
 					))}
 				</div>
 			)}

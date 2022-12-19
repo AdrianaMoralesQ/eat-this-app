@@ -2,6 +2,7 @@ import { Wrapper } from "../../Styled Components";
 import { useEffect, useState } from "react";
 import Airtable from "airtable";
 import { SingleRecipe } from "./SingleRecipe";
+import { SearchResultsRecipe } from "./SearchResultsRecipe";
 
 const base = new Airtable({ apiKey: "keyBbyFzeryQdSUuP" }).base(
 	"appgMqu4ah8WXhmEY"
@@ -9,6 +10,8 @@ const base = new Airtable({ apiKey: "keyBbyFzeryQdSUuP" }).base(
 
 export function Recipes() {
 	const [recipesFromAirtable, setRecipesFromAirtable] = useState([]);
+	const [userInput, setUserInput] = useState("");
+	const [isVisible, setIsVisible] = useState(false);
 
 	const Lunch = recipesFromAirtable.filter((recipe) => recipe.type === "lunch");
 	const Breakfast = recipesFromAirtable.filter(
@@ -30,8 +33,35 @@ export function Recipes() {
 				fetchNextPage();
 			});
 	}, [base]);
+
+	const handleChange = (e) => {
+		setUserInput(e.target.value);
+		setIsVisible(!isVisible);
+	};
+
+	// for search bar
+	const SearchIngredients = recipesFromAirtable.filter((recipe) =>
+		recipe.recipeName.toLowerCase().includes(userInput.toLowerCase())
+	);
+
 	return (
 		<Wrapper>
+			<form onSubmit={(e) => e.preventDefault()} action="" role="search">
+				<input
+					value={userInput}
+					onChange={handleChange}
+					placeholder="Search for ingredients"
+					style={{ height: "40px", width: "280px", borderRadius: "10px" }}
+					title="Search bar"
+				/>
+			</form>
+			{isVisible && (
+				<SearchResultsRecipe
+					title={"Search Results:"}
+					content={SearchIngredients}
+				/>
+			)}
+
 			<SingleRecipe
 				title={"Breakfast 🍳"}
 				content={Breakfast}

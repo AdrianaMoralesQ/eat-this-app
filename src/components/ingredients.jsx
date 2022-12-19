@@ -2,7 +2,7 @@ import { Wrapper } from "../../Styled Components";
 import { useEffect, useState } from "react";
 import Airtable from "airtable";
 import { Ingredient } from "./Ingredient";
-import { SearchResults } from "./SearchResults";
+import { SearchResults } from "./SearchIngredients";
 
 const base = new Airtable({ apiKey: "keyBbyFzeryQdSUuP" }).base(
 	"appgMqu4ah8WXhmEY"
@@ -44,7 +44,7 @@ export function Ingredients() {
 
 	const handleChange = (e) => {
 		setUserInput(e.target.value);
-		setIsVisible(!isVisible);
+		// setIsVisible(!isVisible);
 	};
 
 	// for search bar
@@ -52,7 +52,8 @@ export function Ingredients() {
 		ingredient.name.toLowerCase().includes(userInput.toLowerCase())
 	);
 
-	console.log(SearchIngredients);
+	const FilteredLength = SearchIngredients.length;
+	const UnfilteredLength = ingredientsFromAirtable.length;
 
 	return (
 		<Wrapper>
@@ -65,9 +66,15 @@ export function Ingredients() {
 					title="Search bar"
 				/>
 			</form>
-			{isVisible && (
-				<SearchResults title={"Search Results:"} content={SearchIngredients} />
+			{!!FilteredLength && FilteredLength !== UnfilteredLength && (
+				<>
+					<SearchResults
+						title={"Search Results:"}
+						content={SearchIngredients}
+					/>
+				</>
 			)}
+			{FilteredLength === 0 && <div>No results</div>}
 			<Ingredient
 				title={"Veggies 🥬"}
 				content={Veggies}

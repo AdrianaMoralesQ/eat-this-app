@@ -1,5 +1,4 @@
 /** @jsx jsx */
-import { useState } from "react";
 import { Card, Table, TableHead } from "../../Styled Components";
 import { jsx } from "theme-ui";
 
