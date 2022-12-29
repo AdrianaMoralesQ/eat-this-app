@@ -25,6 +25,9 @@
     "build": "next build",
     "start": "next start"
   },
+  "engines": {
+    "node": ">=16.16.0"
+  },
   "devDependencies": {
     "@types/theme-ui": "^0.6.0"
   }
