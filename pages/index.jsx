@@ -23,7 +23,7 @@ export async function getStaticProps() {
 	return {
 		props: {
 			content: {
-				title: "My Portions 🥑",
+				title: "My Eats 🥑",
 			},
 		},
 	};
