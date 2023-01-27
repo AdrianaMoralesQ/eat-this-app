@@ -1,7 +1,7 @@
 # Eat This 
 <img width="1430" alt="Screenshot 2023-01-27 at 4 42 01 PM" src="https://user-images.githubusercontent.com/109168765/215206081-27d2594d-6489-49ed-b7b3-36d65af192d9.png">
 
-Born from the need to store my daily recipes in a single place, this personal project was built using Javascript and Next.js. The backend was used the Airtable API as a database. 
+Born from the need to store my daily recipes in a single place, this personal project was built using Javascript and Next.js. The backend uses the Airtable API as a database. 
 
 ## Description 
 
