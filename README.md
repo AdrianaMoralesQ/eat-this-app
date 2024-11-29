@@ -11,7 +11,7 @@ Eat This has two main pages:
 
 The ingredients page has suggested amounts of daily intake per ingredient type. If you have an ingredient at home and you're unsure how much to eat, you can input the ingredient name in the search bar and see what the suggested portion of that ingredient is. 
 
-The recipe page allows me to see recipes based on the type of meal I'm looking for, or alternatively, I can also use the search bar to filter recipes containing specific ingredients. 
+The recipe page allows me to see recipes based on the type of meal I'm looking for, or alternatively, I can also use the search bar to filter recipes containing specific ingredients!
 
 ## Objective 🏔️
 This was my first solo project and I wanted it to be an app I visit on a regular basis; I knew this would force me to build something I'd enjoy using. My focus was learning how to use a new database as well as using a style library to make my life easier. 
