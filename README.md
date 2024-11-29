@@ -9,7 +9,7 @@ Eat This has two main pages:
 1. Ingredients
 2. Recipes
 
-The ingredients page has suggested amounts of daily intake per ingredient type. If you have an ingredient at home and you're unsure how much to eat, you can input the ingredient name in the search bar and see what the suggested portion of that ingredient is. 
+The ingredients page has suggested amounts of daily intake per ingredient type. If you have an ingredient at home and you're unsure how much to eat, you can input the ingredient name in the search bar and see what the suggested portion of that ingredient is!
 
 The recipe page allows me to see recipes based on the type of meal I'm looking for, or alternatively, I can also use the search bar to filter recipes containing specific ingredients!
 
